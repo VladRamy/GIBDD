@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="${pageTitle}">SQL Query Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/tableStyle.css">
+  <style>
+    body{
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+<button onclick="location.href='/mainpage/show'">Вернуться назад</button>
+<h1>Введите запрос на SQL языке</h1>
+<form action="/execute-query" method="POST">
+  <textarea name="sqlQuery" rows="5" cols="50"></textarea>
+  <br>
+  <input type="submit" value="Выполнить">
+</form>
+<br>
+<h2>Query Results:</h2>
+<table th:if="${queryResult != null}">
+  <thead>
+  <tr>
+    <th th:each="column : ${columnHeaders.getColumns()}" th:text="${column}"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="row : ${queryResult.rows}">
+    <td th:each="cell : ${row}" th:text="${cell}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

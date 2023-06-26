@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Management</title>
+  <style>
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      margin-bottom: 25px;
+      background-color: navy;
+      color: #fff;
+      border: thick red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>ГИБДД</h1>
+  <button onclick="location.href='/availableNumbers'">Посмотреть все Свободные Номера</button>
+  <button onclick="location.href='/dtp'">Посмотреть все ДТП</button>
+  <button onclick="location.href='/existingNumbers'">Посмотреть все Существующие Номера</button>
+  <button onclick="location.href='/maintenance'">Посмотреть все Тех Обслуживания</button>
+  <button onclick="location.href='/transportVehicle'">Посмотреть все Транспортные Средства</button>
+  <button onclick="location.href='/sql-query'">QueryTools</button>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transport Vehicle</title>
+  <style>
+    body {
+      background-color: #333;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #444;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: navy;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Transport Vehicle</h1>
+  <button onclick="location.href='/mainpage/show'">Вернуться назад</button>
+  <table>
+    <thead>
+    <tr>
+      <th>ID ТС</th>
+      <th>Организация</th>
+      <th>Владелец Машины</th>
+      <th>Модель Машины</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="transportVehicle : ${tv}">
+      <td th:text="${transportVehicle.id}"></td>
+      <td th:text="${transportVehicle.org}"></td>
+      <td th:text="${transportVehicle.owner}"></td>
+      <td th:text="${transportVehicle.car}"></td>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
