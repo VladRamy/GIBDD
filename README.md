@@ -1,0 +1,1 @@
+Hi everybody. This is a project for the traffic police organization (GIBDD). The project is written in Java Spring Boot using a PostgreSQL database. This project is a kind of DBMS of the Pgadmin 4 type.
